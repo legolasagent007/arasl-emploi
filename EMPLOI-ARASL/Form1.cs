@@ -16,5 +16,52 @@ namespace EMPLOI_ARASL
         {
             InitializeComponent();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            tbnom.Text = "";
+            tbprenom.Text = "";
+            tbdob.DateTime = DateTime.Today;
+            tbvillage.Text = "";
+            tbtel.Text = "";
+            tbmail.Text = "";
+            tblieu.Text = "";
+            tbdipl.Text = "";
+            richform.Clear();
+
+        }
+
+        private void btvalid_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(tbdob.DateTime.ToShortDateString());
+
+            try
+            {
+                using (ARASLEntities per=new ARASLEntities())
+                {
+
+                }
+            }
+            catch 
+            {
+
+                MessageBox.Show("Une erreur s'est produite. veuillez vérifier les informations et réessayer");
+            }
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelControl9_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

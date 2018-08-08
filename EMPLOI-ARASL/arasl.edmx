@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ARASLModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ARASLModelStoreContainer">
+    <EntitySet Name="Chomeurs" EntityType="ARASLModel.Store.Chomeurs" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Chomeurs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dob" Type="datetime" Nullable="false" />
+    <Property Name="villagenaiss" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tel" Type="int" Nullable="false" />
+    <Property Name="mail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lieuresidenc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="diplome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="formation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="employe" Type="bit" Nullable="false" />
+    <Property Name="actif" Type="bit" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ARASLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ARASLEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Chomeurs" EntityType="ARASLModel.Chomeur" />
+        </EntityContainer>
+        <EntityType Name="Chomeur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nom" Type="String" Nullable="false" />
+          <Property Name="prenom" Type="String" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="false" />
+          <Property Name="villagenaiss" Type="String" Nullable="false" />
+          <Property Name="tel" Type="Int32" Nullable="false" />
+          <Property Name="mail" Type="String" Nullable="false" />
+          <Property Name="lieuresidenc" Type="String" Nullable="false" />
+          <Property Name="diplome" Type="String" Nullable="false" />
+          <Property Name="formation" Type="String" Nullable="false" />
+          <Property Name="employe" Type="Boolean" Nullable="false" />
+          <Property Name="actif" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ARASLModelStoreContainer" CdmEntityContainer="ARASLEntities">
+    <EntitySetMapping Name="Chomeurs">
+      <EntityTypeMapping TypeName="IsTypeOf(ARASLModel.Chomeur)">
+        <MappingFragment StoreEntitySet="Chomeurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="villagenaiss" ColumnName="villagenaiss" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="lieuresidenc" ColumnName="lieuresidenc" />
+          <ScalarProperty Name="diplome" ColumnName="diplome" />
+          <ScalarProperty Name="formation" ColumnName="formation" />
+          <ScalarProperty Name="employe" ColumnName="employe" />
+          <ScalarProperty Name="actif" ColumnName="actif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
