@@ -17,14 +17,14 @@ namespace EMPLOI_ARASL
         public int Id { get; set; }
         public string nom { get; set; }
         public string prenom { get; set; }
-        public System.DateTime dob { get; set; }
+        public Nullable<System.DateTime> dob { get; set; }
         public string villagenaiss { get; set; }
-        public int tel { get; set; }
+        public string tel { get; set; }
         public string mail { get; set; }
         public string lieuresidenc { get; set; }
         public string diplome { get; set; }
         public string formation { get; set; }
-        public bool employe { get; set; }
-        public bool actif { get; set; }
+        public Nullable<bool> employe { get; set; }
+        public Nullable<bool> actif { get; set; }
     }
 }

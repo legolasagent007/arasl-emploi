@@ -15,15 +15,15 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nom" Type="nvarchar(max)" Nullable="false" />
     <Property Name="prenom" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="dob" Type="datetime" Nullable="false" />
-    <Property Name="villagenaiss" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="tel" Type="int" Nullable="false" />
+    <Property Name="dob" Type="datetime" Nullable="true" />
+    <Property Name="villagenaiss" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="tel" Type="nvarchar(max)" Nullable="false" />
     <Property Name="mail" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="lieuresidenc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="lieuresidenc" Type="nvarchar(max)" Nullable="true" />
     <Property Name="diplome" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="formation" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="employe" Type="bit" Nullable="false" />
-    <Property Name="actif" Type="bit" Nullable="false" />
+    <Property Name="formation" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="employe" Type="bit" Nullable="true" />
+    <Property Name="actif" Type="bit" Nullable="true" />
   </EntityType>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -39,15 +39,15 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nom" Type="String" Nullable="false" />
           <Property Name="prenom" Type="String" Nullable="false" />
-          <Property Name="dob" Type="DateTime" Nullable="false" />
-          <Property Name="villagenaiss" Type="String" Nullable="false" />
-          <Property Name="tel" Type="Int32" Nullable="false" />
+          <Property Name="dob" Type="DateTime" Nullable="true" />
+          <Property Name="villagenaiss" Type="String" Nullable="true" />
+          <Property Name="tel" Type="String" Nullable="false" />
           <Property Name="mail" Type="String" Nullable="false" />
-          <Property Name="lieuresidenc" Type="String" Nullable="false" />
+          <Property Name="lieuresidenc" Type="String" Nullable="true" />
           <Property Name="diplome" Type="String" Nullable="false" />
-          <Property Name="formation" Type="String" Nullable="false" />
-          <Property Name="employe" Type="Boolean" Nullable="false" />
-          <Property Name="actif" Type="Boolean" Nullable="false" />
+          <Property Name="formation" Type="String" Nullable="true" />
+          <Property Name="employe" Type="Boolean" Nullable="true" />
+          <Property Name="actif" Type="Boolean" Nullable="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

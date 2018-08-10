@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/08/2018 14:17:26
--- Generated from EDMX file: c:\users\dark-heart\onedrive\documents\visual studio 2017\Projects\EMPLOI-ARASL\EMPLOI-ARASL\arasl.edmx
+-- Date Created: 08/09/2018 17:14:37
+-- Generated from EDMX file: C:\Users\Dark-Heart\OneDrive\Documents\Visual Studio 2017\Projects\EMPLOI-ARASL\EMPLOI-ARASL\arasl.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -22,6 +22,9 @@ GO
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Chomeurs]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Chomeurs];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -32,15 +35,15 @@ CREATE TABLE [dbo].[Chomeurs] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [nom] nvarchar(max)  NOT NULL,
     [prenom] nvarchar(max)  NOT NULL,
-    [dob] datetime  NOT NULL,
-    [villagenaiss] nvarchar(max)  NOT NULL,
-    [tel] int  NOT NULL,
+    [dob] datetime  NULL,
+    [villagenaiss] nvarchar(max)  NULL,
+    [tel] nvarchar(max)  NOT NULL,
     [mail] nvarchar(max)  NOT NULL,
-    [lieuresidenc] nvarchar(max)  NOT NULL,
+    [lieuresidenc] nvarchar(max)  NULL,
     [diplome] nvarchar(max)  NOT NULL,
-    [formation] nvarchar(max)  NOT NULL,
-    [employe] bit  NOT NULL,
-    [actif] bit  NOT NULL
+    [formation] nvarchar(max)  NULL,
+    [employe] bit  NULL,
+    [actif] bit  NULL
 );
 GO
 

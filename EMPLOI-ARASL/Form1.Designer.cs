@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.radioacrif = new DevExpress.XtraEditors.RadioGroup();
+            this.tbdel = new DevExpress.XtraEditors.SimpleButton();
             this.radioemp = new DevExpress.XtraEditors.RadioGroup();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.richform = new System.Windows.Forms.RichTextBox();
@@ -52,10 +56,27 @@
             this.btcancel = new DevExpress.XtraEditors.SimpleButton();
             this.btvalid = new DevExpress.XtraEditors.SimpleButton();
             this.tbdob = new DevExpress.XtraEditors.DateEdit();
+            this.aRASLDataSet = new EMPLOI_ARASL.ARASLDataSet();
+            this.aRASLDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.chomeursBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colnom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colprenom = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldob = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colvillagenaiss = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltel = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.collieuresidenc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldiplome = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colformation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colemploye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colactif = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.chomeursTableAdapter = new EMPLOI_ARASL.ARASLDataSetTableAdapters.ChomeursTableAdapter();
+            this.id = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioacrif.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioemp.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdipl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblieu.Properties)).BeginInit();
@@ -66,13 +87,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbnom.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdob.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdob.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRASLDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRASLDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chomeursBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupControl1.Controls.Add(this.labelControl11);
+            this.groupControl1.Controls.Add(this.radioacrif);
+            this.groupControl1.Controls.Add(this.tbdel);
             this.groupControl1.Controls.Add(this.radioemp);
             this.groupControl1.Controls.Add(this.labelControl10);
             this.groupControl1.Controls.Add(this.richform);
@@ -102,14 +129,47 @@
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Informations générales";
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(971, 251);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(23, 13);
+            this.labelControl11.TabIndex = 25;
+            this.labelControl11.Text = "Actif";
+            // 
+            // radioacrif
+            // 
+            this.radioacrif.EditValue = true;
+            this.radioacrif.Location = new System.Drawing.Point(1017, 248);
+            this.radioacrif.Name = "radioacrif";
+            this.radioacrif.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.radioacrif.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Oui"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Non")});
+            this.radioacrif.Size = new System.Drawing.Size(100, 51);
+            this.radioacrif.TabIndex = 24;
+            this.radioacrif.ToolTip = "Précisez si la personne a déja un emploi";
+            this.radioacrif.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
+            // 
+            // tbdel
+            // 
+            this.tbdel.Location = new System.Drawing.Point(723, 438);
+            this.tbdel.Name = "tbdel";
+            this.tbdel.Size = new System.Drawing.Size(133, 32);
+            this.tbdel.TabIndex = 23;
+            this.tbdel.Text = "Supprimer";
+            this.tbdel.ToolTip = "Annuler l\'opération en cours et vider les champs";
+            this.tbdel.Click += new System.EventHandler(this.tbdel_Click);
+            // 
             // radioemp
             // 
+            this.radioemp.EditValue = true;
             this.radioemp.Location = new System.Drawing.Point(516, 246);
             this.radioemp.Name = "radioemp";
             this.radioemp.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.radioemp.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Oui", false),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Non")});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Oui"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Non")});
             this.radioemp.Size = new System.Drawing.Size(100, 51);
             this.radioemp.TabIndex = 22;
             this.radioemp.ToolTip = "Précisez si la personne a déja un emploi";
@@ -281,6 +341,7 @@
             this.btprint.TabIndex = 2;
             this.btprint.Text = "Imprimer";
             this.btprint.ToolTip = "Imprimer la liste des demandeurs d\'emploi en fonction des critères";
+            this.btprint.Click += new System.EventHandler(this.btprint_Click);
             // 
             // btcancel
             // 
@@ -328,20 +389,162 @@
             this.tbdob.ToolTip = "Date de naissance";
             this.tbdob.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
+            // aRASLDataSet
+            // 
+            this.aRASLDataSet.DataSetName = "ARASLDataSet";
+            this.aRASLDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aRASLDataSetBindingSource
+            // 
+            this.aRASLDataSetBindingSource.DataSource = this.aRASLDataSet;
+            this.aRASLDataSetBindingSource.Position = 0;
+            // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 493);
+            this.gridControl1.DataSource = this.chomeursBindingSource;
+            this.gridControl1.Location = new System.Drawing.Point(2, 493);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1300, 330);
+            this.gridControl1.Size = new System.Drawing.Size(1300, 332);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // chomeursBindingSource
+            // 
+            this.chomeursBindingSource.DataMember = "Chomeurs";
+            this.chomeursBindingSource.DataSource = this.aRASLDataSetBindingSource;
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.id,
+            this.colnom,
+            this.colprenom,
+            this.coldob,
+            this.colvillagenaiss,
+            this.coltel,
+            this.colmail,
+            this.collieuresidenc,
+            this.coldiplome,
+            this.colformation,
+            this.colemploye,
+            this.colactif});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsPrint.PrintDetails = true;
+            this.gridView1.OptionsPrint.PrintPreview = true;
+            this.gridView1.PaintStyleName = "Skin";
+            // 
+            // colnom
+            // 
+            this.colnom.FieldName = "nom";
+            this.colnom.Name = "colnom";
+            this.colnom.OptionsColumn.AllowEdit = false;
+            this.colnom.Visible = true;
+            this.colnom.VisibleIndex = 0;
+            // 
+            // colprenom
+            // 
+            this.colprenom.FieldName = "prenom";
+            this.colprenom.Name = "colprenom";
+            this.colprenom.OptionsColumn.AllowEdit = false;
+            this.colprenom.Visible = true;
+            this.colprenom.VisibleIndex = 1;
+            // 
+            // coldob
+            // 
+            this.coldob.Caption = "Date de naissance";
+            this.coldob.FieldName = "dob";
+            this.coldob.Name = "coldob";
+            this.coldob.OptionsColumn.AllowEdit = false;
+            this.coldob.Visible = true;
+            this.coldob.VisibleIndex = 2;
+            // 
+            // colvillagenaiss
+            // 
+            this.colvillagenaiss.Caption = "Village de naissance";
+            this.colvillagenaiss.FieldName = "villagenaiss";
+            this.colvillagenaiss.Name = "colvillagenaiss";
+            this.colvillagenaiss.OptionsColumn.AllowEdit = false;
+            this.colvillagenaiss.Visible = true;
+            this.colvillagenaiss.VisibleIndex = 3;
+            // 
+            // coltel
+            // 
+            this.coltel.Caption = "Téléphone";
+            this.coltel.FieldName = "tel";
+            this.coltel.Name = "coltel";
+            this.coltel.OptionsColumn.AllowEdit = false;
+            this.coltel.Visible = true;
+            this.coltel.VisibleIndex = 4;
+            // 
+            // colmail
+            // 
+            this.colmail.Caption = "Mail";
+            this.colmail.FieldName = "mail";
+            this.colmail.Name = "colmail";
+            this.colmail.OptionsColumn.AllowEdit = false;
+            this.colmail.Visible = true;
+            this.colmail.VisibleIndex = 5;
+            // 
+            // collieuresidenc
+            // 
+            this.collieuresidenc.Caption = "Résidence";
+            this.collieuresidenc.FieldName = "lieuresidenc";
+            this.collieuresidenc.Name = "collieuresidenc";
+            this.collieuresidenc.OptionsColumn.AllowEdit = false;
+            this.collieuresidenc.Visible = true;
+            this.collieuresidenc.VisibleIndex = 6;
+            // 
+            // coldiplome
+            // 
+            this.coldiplome.Caption = "Diplômes";
+            this.coldiplome.FieldName = "diplome";
+            this.coldiplome.Name = "coldiplome";
+            this.coldiplome.OptionsColumn.AllowEdit = false;
+            this.coldiplome.Visible = true;
+            this.coldiplome.VisibleIndex = 7;
+            // 
+            // colformation
+            // 
+            this.colformation.Caption = "Formations";
+            this.colformation.FieldName = "formation";
+            this.colformation.Name = "colformation";
+            this.colformation.OptionsColumn.AllowEdit = false;
+            this.colformation.Visible = true;
+            this.colformation.VisibleIndex = 8;
+            // 
+            // colemploye
+            // 
+            this.colemploye.Caption = "Est employé?";
+            this.colemploye.FieldName = "employe";
+            this.colemploye.Name = "colemploye";
+            this.colemploye.OptionsColumn.AllowEdit = false;
+            this.colemploye.Visible = true;
+            this.colemploye.VisibleIndex = 9;
+            // 
+            // colactif
+            // 
+            this.colactif.Caption = "Actif ?";
+            this.colactif.FieldName = "actif";
+            this.colactif.Name = "colactif";
+            this.colactif.OptionsColumn.AllowEdit = false;
+            this.colactif.Visible = true;
+            this.colactif.VisibleIndex = 10;
+            // 
+            // chomeursTableAdapter
+            // 
+            this.chomeursTableAdapter.ClearBeforeFill = true;
+            // 
+            // id
+            // 
+            this.id.Caption = "id";
+            this.id.FieldName = "Id";
+            this.id.Name = "id";
             // 
             // Form1
             // 
@@ -356,9 +559,11 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EMPLOI ARASL";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioacrif.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioemp.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdipl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblieu.Properties)).EndInit();
@@ -369,7 +574,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbnom.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdob.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbdob.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRASLDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aRASLDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chomeursBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -380,8 +588,6 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btcancel;
         private DevExpress.XtraEditors.SimpleButton btvalid;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.SimpleButton btprint;
         private DevExpress.XtraEditors.TextEdit tbnom;
         private DevExpress.XtraEditors.TextEdit tbprenom;
@@ -403,6 +609,27 @@
         private System.Windows.Forms.RichTextBox richform;
         private DevExpress.XtraEditors.RadioGroup radioemp;
         private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraEditors.SimpleButton tbdel;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.RadioGroup radioacrif;
+        private System.Windows.Forms.BindingSource aRASLDataSetBindingSource;
+        private ARASLDataSet aRASLDataSet;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.BindingSource chomeursBindingSource;
+        private ARASLDataSetTableAdapters.ChomeursTableAdapter chomeursTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colnom;
+        private DevExpress.XtraGrid.Columns.GridColumn colprenom;
+        private DevExpress.XtraGrid.Columns.GridColumn coldob;
+        private DevExpress.XtraGrid.Columns.GridColumn colvillagenaiss;
+        private DevExpress.XtraGrid.Columns.GridColumn coltel;
+        private DevExpress.XtraGrid.Columns.GridColumn colmail;
+        private DevExpress.XtraGrid.Columns.GridColumn collieuresidenc;
+        private DevExpress.XtraGrid.Columns.GridColumn coldiplome;
+        private DevExpress.XtraGrid.Columns.GridColumn colformation;
+        private DevExpress.XtraGrid.Columns.GridColumn colemploye;
+        private DevExpress.XtraGrid.Columns.GridColumn colactif;
+        private DevExpress.XtraGrid.Columns.GridColumn id;
     }
 }
 
